@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Madlibs!</title>
+</head>
+
+<body>
+    <main>
+        <h1>MadLibs!</h1>
+        <form action='/story' class="input-form">
+            {% for prompt in prompts %}
+            <label for={{prompt}}>{{prompt.replace("_"," ").title()}}</label>
+            <input type="text" name={{prompt}} placeholder={{prompt.capitalize()}}></input><br><br>
+            {% endfor %}
+            <button>Tell me a story!</button>
+        </form>
+    </main>
+</body>
+
+</html>
